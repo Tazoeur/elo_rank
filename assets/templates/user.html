@@ -16,6 +16,7 @@
                     <th>Outcome</th>
                     <th>Opponent</th>
                     <th>ELO movement</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +39,7 @@
                         <span class="has-text-danger">{{ match.elo_movement }}</span>
                         {%endif%}
                     </td>
+                    <td>{{ match.timestamp }}</td>
                 </tr>
                 {% endfor%}
             </tbody>

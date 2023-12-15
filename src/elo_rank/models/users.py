@@ -78,6 +78,7 @@ class UserMatchHistory(db.Model):
     player_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     opponent_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     elo_movement = Column(Integer, nullable=False)
+    timestamp= Column(DateTime, nullable=False, default=dt.datetime.now())
 
     player = db.relationship("User", foreign_keys=[player_id])
     opponent = db.relationship("User", foreign_keys=[opponent_id])
