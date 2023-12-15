@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-8 is-offset-2">
+    <h3 class="title">Commit new match</h3>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="notification is-danger">
+            {{ messages[0] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('user.manage_commit_match') }}">
+            <div class="field is-grouped">
+                <div class="control">
+                    <input class="input is-large" type="email" name="player_a" value="{{ current_user.email }}"
+                        disabled>
+                </div>
+                <div class="control">
+                    <input class="input is-large" list="players" name="player_b">
+                    <datalist id="players">
+                        {% for player in players%}
+                        <option value="{{player}}">
+                            {% endfor %}
+                    </datalist>
+                </div>
+
+            </div>
+
+            <div class="field is-grouped is-centered">
+                <p class="control">
+                    <input class="input" type="number" name="set_1" placeholder="Set 1">
+                </p>
+                <p class="control">
+                    <input class="input" type="number" name="set_2" placeholder="Set 2">
+                </p>
+                <p class="control">
+                    <input class="input" type="number" name="set_3" placeholder="Set 3">
+                </p>
+            </div>
+            <button class="button is-block is-info is-large is-fullwidth">Commit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

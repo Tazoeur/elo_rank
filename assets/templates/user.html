@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Welcome, {{ current_user.first_name }} {{ current_user.last_name }}!
+</h1>
+<p>You currently hold a score of <span class="has-text-weight-bold">{{ current_user.score }}</span></p>
+{% if matches %}
+<br>
+<div class="columns is-centered">
+    <div class="column box is-narrow">
+        <h2 class="is-black  is-size-3">Match history</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Outcome</th>
+                    <th>Opponent</th>
+                    <th>ELO movement</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for match in matches%}
+                <tr>
+
+                    <th>
+                        {% if match.elo_movement >0 %}
+                        Victory
+                        {% else %}
+                        Defeat
+                        {% endif %}
+                    </th>
+                    <td>{{ match.opponent.email }}</td>
+                    <td>
+                        {% if match.elo_movement >=0%}
+                        <span class="has-text-success">{{ match.elo_movement}}</span>
+                        {% else %}
+                        <span class="has-text-danger">{{ match.elo_movement }}</span>
+                        {%endif%}
+                    </td>
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endif%}
+{% endblock %}

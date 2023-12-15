@@ -1,0 +1,665 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h3 class="title">Rules</h3>
+    <div class="box">
+        <p>Always best of 3 (2 winning sets)</p>
+        <p>See the table below in order to know how points are computed. (<a
+                href="http://2tmc.free.fr/FFTT_Grille%20de%20calcul%20des%20Points.htm">Source</a>)</p>
+
+    </div>
+    <div>
+        <ul>
+            <ul>
+                <ul>
+                    <ul>
+                        <ul>
+                            <p><b><i>
+                                        <font color="#003366" face="Arial"><span style="font-size:12pt;">FFTT
+                                                &nbsp;&nbsp;: Grille de calcul des Points</span></font>
+                                    </i></b></p>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <ul>
+                <table style="border-collapse:collapse;" border="0" cellpadding="0" cellspacing="0" width="585">
+                    <tbody>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Résultat</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Ecart
+                                            de points</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p>
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">0-24</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">6</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">6</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-5</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">25-49</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">5,5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-4,5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:10pt;">
+                                        <font face="Arial">7</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-6</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">50-99</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-4</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">8</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-7</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">100-149</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">4</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-3</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:10pt;">
+                                        <font face="Arial">10</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-8</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">150-199</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">3</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-2</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">13</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-10</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">200-299</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">2</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-1</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:10pt;">
+                                        <font face="Arial">17</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-12,5</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">300-399</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">1</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-0,5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">22</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-16</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">400-499</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">0,5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">0</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:10pt;">
+                                        <font face="Arial">28</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-20</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">500+</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">0</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">0</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">40</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p><span style="font-size:9pt;">
+                                        <font face="Arial">-29</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ul>
+            <ul>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Victoire
+                            normale &nbsp;&nbsp;&nbsp;- Victoire &nbsp;&nbsp;face à &nbsp;un joueur d'un classement
+                            inférieur</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Défaite
+                            normale &nbsp;&nbsp;&nbsp; - Défaite &nbsp;&nbsp;&nbsp;face à &nbsp;un joueur mieux classé
+                        </font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Victoire
+                            anormale &nbsp; - Victoire &nbsp;face à &nbsp;un joueur mieux classé&nbsp;&nbsp;</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Défaite
+                            anormale &nbsp;&nbsp;&nbsp;- Défaite &nbsp;&nbsp;face à &nbsp;un joueur d'un classement
+                            inférieur</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;">&nbsp;</p>
+            </ul>
+            <ul>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Exemples
+                            :</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;">&nbsp;</p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Vous
+                            avez &nbsp;&nbsp;540 Pts &nbsp;, votre adversaire a 600 Pts , &nbsp;&nbsp;Soit
+                            60 &nbsp;Pts d'écarts &nbsp;, Vous gagnez &nbsp;&nbsp;.</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">C'est
+                            une&nbsp;&nbsp;&nbsp;VICTOIRE ANORMALE &nbsp;qui vous rapporte 8 Points
+                            .</font>
+                    </span>&nbsp;</p>
+            </ul>
+            <ul>
+                <table style="line-height:100%; margin-top:0; margin-bottom:0; border-collapse:collapse;" border="0"
+                    cellpadding="0" cellspacing="0" width="585">
+                    <tbody>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Résultat</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Ecart
+                                            de points</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">50-99</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">-4</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><b>
+                                        <font color="red" face="Arial"><span style="font-size:9pt;">8</span></font>
+                                    </b></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">-7</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0; border-collapse:collapse;">&nbsp;</p>
+            </ul>
+            <ul>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">Vous
+                            avez &nbsp;&nbsp;550 Pts &nbsp;, votre adversaire a &nbsp;620&nbsp;Pts
+                            , &nbsp;&nbsp;Soit 70 &nbsp;Pts d'écarts &nbsp;, Vous perdez &nbsp;&nbsp;.</font>
+                    </span></p>
+                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span style="font-size:10pt;">
+                        <font face="Arial">C'est
+                            une DEFAITE NORMALE &nbsp;, vous perdez - 4 points</font>
+                    </span>&nbsp;</p>
+            </ul>
+            <ul>
+                <table style="line-height:100%; margin-top:0; margin-bottom:0; border-collapse:collapse;" border="0"
+                    cellpadding="0" cellspacing="0" width="585">
+                    <tbody>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Résultat</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">VICTOIRE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-top-width:1; border-right-width:1; border-left-width:1; border-top-color:black; border-right-color:black; border-left-color:black; border-top-style:solid; border-right-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">DÉFAITE</span></font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">Ecart
+                                            de points</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:9pt;">NORMALE</span></font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom" bgcolor="#003366"
+                                style="border-right-width:1; border-bottom-width:1; border-left-width:1; border-right-color:black; border-bottom-color:black; border-left-color:black; border-right-style:solid; border-bottom-style:solid; border-left-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;">
+                                    <font color="white" face="Arial"><span style="font-size:10pt;">ANORMALE</span>
+                                    </font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="115" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">50-99</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">5</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><b>
+                                        <font color="red" face="Arial"><span style="font-size:9pt;">-4</span></font>
+                                    </b></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">8</font>
+                                    </span></p>
+                            </td>
+                            <td width="116" height="17" align="center" valign="bottom"
+                                style="border-width:1; border-color:black; border-style:solid;">
+                                <p style="line-height:100%; margin-top:0; margin-bottom:0;"><span
+                                        style="font-size:9pt;">
+                                        <font face="Arial">-7</font>
+                                    </span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>&nbsp;</p>
+            </ul>
+        </ul>
+    </div>
+</div>
+{% endblock %}
