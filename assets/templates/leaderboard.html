@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    Leaderboard
+</h1>
+<div class="columns is-centered">
+    <div class="column box is-narrow">
+        <h2 class="is-black  is-size-3">Top 10</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players[:10] %}
+                <tr>
+                    <th>
+                        {% if player.position == 1 %}
+                        🥇
+                        {% elif player.position == 2 %}
+                        🥈
+                        {% elif player.position == 3 %}
+                        🥉
+                        {% else %}
+                        {{ player.position }}
+                        {% endif %}
+                    </th>
+                    <td>{{ player.link | safe }}</td>
+                    <td>{{ player.score }}</td>
+                </tr>
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}
