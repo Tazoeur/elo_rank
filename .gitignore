@@ -177,3 +177,5 @@ pyrightconfig.json
 .vscode
 .history
 venv*
+
+**.session.sql

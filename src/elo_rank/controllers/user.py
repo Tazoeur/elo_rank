@@ -28,7 +28,7 @@ def commit_match():
 @user.post("/commit_match")
 @login_required
 def manage_commit_match():
-    player_a = current_user
+    player_a: User = current_user
     player_b_email = request.form.get("player_b")
     form_redirection = redirect(url_for("user.commit_match"))
 

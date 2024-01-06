@@ -2,6 +2,7 @@ from __future__ import annotations
 from typing import Optional
 from elo_rank import db
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
+from sqlalchemy.sql import func
 import datetime as dt
 from flask_login import UserMixin
 from elo_rank.lib import compute_elo_movement
@@ -16,7 +17,7 @@ class User(UserMixin, db.Model):
     last_name = Column(String)
     email = Column(String, nullable=False)
     password = Column(String, nullable=False)
-    created_at = Column(DateTime, default=dt.datetime.utcnow, nullable=False)
+    created_at = Column(DateTime, default=func.now(), nullable=False)
     score = Column(Integer, nullable=False, default=500)
     score_computed_at = Column(DateTime)
 
@@ -78,7 +79,7 @@ class UserMatchHistory(db.Model):
     player_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     opponent_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     elo_movement = Column(Integer, nullable=False)
-    timestamp= Column(DateTime, nullable=False, default=dt.datetime.now())
+    timestamp= Column(DateTime, nullable=False, default=func.now())
 
     player = db.relationship("User", foreign_keys=[player_id])
     opponent = db.relationship("User", foreign_keys=[opponent_id])
