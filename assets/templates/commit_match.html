@@ -42,5 +42,26 @@
             <button class="button is-block is-info is-large is-fullwidth">Commit</button>
         </form>
     </div>
+    <article class="message is-info">
+        <div class="message-body">
+
+            In order to commit a match, you must provide the different scores issued for the sets you've played.
+            <br>
+            The value of the score is the amount of points that the set's looser has earned.<br><br>
+            If the person commiting the score has won, the value is positive.<br>
+            If the person commiting the score has lost, the value is negative.
+            <br>
+            <br>
+
+            Example:
+
+            Alice and Bob have played a match. <br>Alice won the first set 11-3, Bob won the second set 13-11 and Alice
+            won
+            the last set 11-5.
+            <br><br>
+            If Alice commits the match, she would use the following inputs: 3; -11; 5.<br>
+            If Bob commits the match, he would use the following inputs: -3; 11; -5.
+        </div>
+    </article>
 </div>
 {% endblock %}
