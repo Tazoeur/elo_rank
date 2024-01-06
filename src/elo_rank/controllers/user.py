@@ -9,13 +9,19 @@ user = Blueprint("user", __name__)
 
 
 @user.route("/profile")
+@user.route("/profile/<user_id>")
 @login_required
 def profile(user_id: Optional[int] = None):
+    user_id = user_id or current_user.get_id()
     match_history: List[UserMatchHistory] = UserMatchHistory.query.filter_by(
-        player_id=current_user.get_id()
+        player_id=user_id
     ).all()
+    if user_id == current_user:
+        user = current_user
+    else:
+        user = User.query.get(user_id)
 
-    return render_template("user.html", matches=match_history)
+    return render_template("profile.html", matches=match_history, user=user)
 
 
 @user.get("/commit_match")

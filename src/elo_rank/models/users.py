@@ -1,5 +1,7 @@
 from __future__ import annotations
 from typing import Optional
+
+from flask import url_for
 from elo_rank import db
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.sql import func
@@ -71,6 +73,14 @@ class User(UserMixin, db.Model):
         player_b.score += match_history_player_b.elo_movement
         db.session.commit()
 
+    @property
+    def full_name(self) -> str:
+        return f"{self.first_name} {self.last_name}".strip()
+
+    @property
+    def link(self) -> str:
+        return f'<a class="button is_link" href="{url_for("user.profile", user_id=self.id)}">{self.full_name}</a>'
+
 
 class UserMatchHistory(db.Model):
     __tablename__ = "user_match_history"
@@ -79,7 +89,7 @@ class UserMatchHistory(db.Model):
     player_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     opponent_id = Column(Integer, ForeignKey("users.user_id"), nullable=False)
     elo_movement = Column(Integer, nullable=False)
-    timestamp= Column(DateTime, nullable=False, default=func.now())
+    timestamp = Column(DateTime, nullable=False, default=func.now())
 
     player = db.relationship("User", foreign_keys=[player_id])
     opponent = db.relationship("User", foreign_keys=[opponent_id])

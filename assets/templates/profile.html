@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1 class="title">
-    Welcome, {{ current_user.first_name }} {{ current_user.last_name }}!
+    {{ user.first_name }} {{ user.last_name }}'s Profile
 </h1>
-<p>You currently hold a score of <span class="has-text-weight-bold">{{ current_user.score }}</span></p>
+<p>Current score : <span class="has-text-weight-bold">{{ user.score }}</span></p>
 {% if matches %}
 <br>
 <div class="columns is-centered">
@@ -21,7 +21,7 @@
             </thead>
             <tbody>
 
-                {% for match in matches%}
+                {% for match in matches | reverse %}
                 <tr>
 
                     <th>
@@ -31,7 +31,7 @@
                         Defeat
                         {% endif %}
                     </th>
-                    <td>{{ match.opponent.email }}</td>
+                    <td>{{ match.opponent.link | safe }}</td>
                     <td>
                         {% if match.elo_movement >=0%}
                         <span class="has-text-success">{{ match.elo_movement}}</span>
