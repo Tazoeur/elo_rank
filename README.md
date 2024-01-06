@@ -10,9 +10,11 @@ source venv/bin/activate
 pip install .
 ```
 
-## Launch in debug mode
+## Launch 
 ```bash
-launch_elo
+cp example.env .env
+export $(cat .env)
+flask run
 ```
 
 ## Launch in production
